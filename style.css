@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-pink : #DA2C71;
+    --dark-pink : #9B3A78;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    background-image: linear-gradient(to right bottom, var(--light-pink) , var(--dark-pink));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 90%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    max-width: 450px;
+    max-height: 680px;
+    min-width: 250px;
+}
+
+h1{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    height: 90%;
+    /* background-color: violet; */
+    display: grid;
+    grid-template-rows: repeat(7, 13%);
+    grid-gap: 10px;
+    grid-template-areas: "first-name"
+                         "last-name"
+                         "email"
+                         "birthday"
+                         "gender"
+                         "select"
+                         "button";
+}
+
+@media (max-width: 320px) {
+    .main-container {
+        height: 98%;
+    }
+
+}
+
+input:not(.gender-radio-button) {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    border: 1px solid lightgray;
+    background-color: rgb(248, 246, 246);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+input:not(.gender-radio-button):focus {
+    border-bottom: 3px solid var(--light-pink);
+}
+
+input:not(.gender-radio-button):hover {
+    border-bottom: 3px solid var(--light-pink);
+}
+
+select {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    border: 1px solid lightgray;
+    margin-top: 5px;
+    background-color: rgb(248, 246, 246);
+}
+
+.first-name {
+    grid-area: first-name;
+}
+
+.last-name {
+    grid-area: last-name;
+}
+
+.email {
+    grid-area: email;
+}
+
+.birthday {
+    grid-area: birthday;
+}
+
+.gender {
+    grid-area: gender;
+    margin-top: 5px;
+}
+
+.gender-radio-button {
+    margin-top: 15px;
+}
+
+.gender-male, .gender-female {
+    margin-left: 5px;
+}
+
+.select {
+    grid-area: select;
+}
+
+.button {
+    grid-area: button;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 0.7rem 1.2rem;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #4272D7;
+    color: white;
+}
+
