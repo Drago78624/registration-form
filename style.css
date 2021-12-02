@@ -24,6 +24,57 @@ body {
     align-items: center;
 }
 
+.image {
+    height: 600px;
+    position: relative;
+    box-shadow: -2px 2px 10px rgb(136, 18, 97);
+}
+
+@media (max-width: 75rem), (max-height: 48rem) {
+    .image {
+        display: none;
+    }
+}
+
+/* @media  {
+    .image {
+        display: none;
+    }
+} */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.activated-state {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 58, 119, 0.61);
+    position: absolute;
+    top: 0%;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.activated-state:hover {
+    opacity: 1;
+}
+
+h2 {
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    color: white;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    color: white;
+}
+
 .main-container {
     width: 90%;
     height: 90%;
@@ -34,14 +85,24 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 500px;
-    max-width: 450px;
+    max-width: 500px;
     max-height: 680px;
     min-width: 250px;
+    box-shadow: 2px 2px 10px rgb(136, 18, 97);
+}
+
+@media (min-width: 40rem) {
+    .main-container {
+        padding: 2rem 2rem;
+    }
 }
 
 h1{
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
+  background: -webkit-linear-gradient(var(--light-pink), var(--dark-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 form {
@@ -74,9 +135,10 @@ input:not(.gender-radio-button) {
     border: 0;
     outline: 0;
     border: 1px solid lightgray;
-    background-color: rgb(248, 246, 246);
+    background-color: rgb(233, 231, 231);
     font-size: 1.1rem;
     margin-top: 5px;
+    font-family: inherit;
 }
 
 input:not(.gender-radio-button):focus {
@@ -96,6 +158,10 @@ select {
     border: 1px solid lightgray;
     margin-top: 5px;
     background-color: rgb(248, 246, 246);
+}
+
+select:focus {
+    border-top: 3px solid var(--light-pink);
 }
 
 .first-name {
@@ -142,6 +208,14 @@ button {
     border: 0;
     border-radius: 5px;
     font-size: 1rem;
+    border: 1px solid #4272D7;
+    color: #4272D7;
+    background-color: white;
+    transition: background-color 400ms;
+    cursor: pointer;
+}
+
+button:hover {
     background-color: #4272D7;
     color: white;
 }
